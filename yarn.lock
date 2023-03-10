@@ -1779,7 +1779,7 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
-"@types/react-native-vector-icons@^6.4.13":
+"@types/react-native-vector-icons@^6.4.13", "@types/react-native-vector-icons@^6.4.5":
   version "6.4.13"
   resolved "https://registry.npmjs.org/@types/react-native-vector-icons/-/react-native-vector-icons-6.4.13.tgz"
   integrity sha512-1PqFoKuXTSzMHwGMAr+REdYJBQAbe9xrww3ecZR0FsHcD1K+vGS/rxuAriL4rsI6+p69sZQjDzpEVAbDQcjSwA==
@@ -5928,6 +5928,13 @@ react-native-gradle-plugin@^0.71.15:
   version "0.71.15"
   resolved "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.15.tgz"
   integrity sha512-7S3pAuPaQJlhax6EZ4JMsDNpj05TfuzX9gPgWLrFfAIWIFLuJ6aDQYAZy2TEI9QJALPoWrj8LWaqP/DGYh14pw==
+
+react-native-textinput-effects@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.npmjs.org/react-native-textinput-effects/-/react-native-textinput-effects-0.6.3.tgz"
+  integrity sha512-WGLKR0cshSRTS2+65WFfHmU26UHKoNQQzqe1H1agUSiO3WUJvKTLGZu6DMrwLko90tjuWt2RQsXINs6iFFe2mg==
+  dependencies:
+    "@types/react-native-vector-icons" "^6.4.5"
 
 react-native-vector-icons@^9.2.0:
   version "9.2.0"
