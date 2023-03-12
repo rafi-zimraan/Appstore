@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import React, {Component} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {hitam, putih} from '../utils/Colors';
