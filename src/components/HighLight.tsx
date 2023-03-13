@@ -51,6 +51,6 @@ const styles = StyleSheet.create({
   },
   tema1: {
     flexDirection: 'row',
-    marginTop: 55,
+    marginTop: 35,
   },
 });

@@ -9,61 +9,47 @@ export default class DrawerContent extends Component {
       <View>
         <View style={styles.content}>
           <View style={styles.IconContent}>
-            <TouchableOpacity>
-              <Icon name="account-outline" size={25} color={hitam} />
-            </TouchableOpacity>
+            <Icon name="account-outline" size={25} color={hitam} />
             <Text style={styles.txtContent}>Profile</Text>
           </View>
           <View style={styles.IconContent}>
-            <TouchableOpacity>
-              <Icon name="facebook-messenger" size={25} color={hitam} />
-            </TouchableOpacity>
+            <Icon name="facebook-messenger" size={25} color={hitam} />
             <Text style={styles.txtContent}>Messages</Text>
           </View>
           <View style={styles.IconContent}>
-            <TouchableOpacity>
-              <Icon name="access-point-check" size={25} color={hitam} />
-            </TouchableOpacity>
+            <Icon name="access-point-check" size={25} color={hitam} />
             <Text style={styles.txtContent}>Activity</Text>
           </View>
           <View style={styles.IconContent}>
-            <TouchableOpacity>
-              <Icon name="format-list-checkbox" size={25} color={hitam} />
-            </TouchableOpacity>
+            <Icon name="format-list-checkbox" size={25} color={hitam} />
             <Text style={styles.txtContent}>List</Text>
           </View>
           <View style={styles.IconContent}>
-            <TouchableOpacity>
-              <Icon name="chart-bar" size={25} color={hitam} />
-            </TouchableOpacity>
+            <Icon name="chart-bar" size={25} color={hitam} />
             <Text style={styles.txtContent}>Report</Text>
           </View>
           <View style={styles.IconContent}>
-            <TouchableOpacity>
-              <Icon name="chart-line" size={25} color={hitam} />
-            </TouchableOpacity>
+            <Icon name="chart-line" size={25} color={hitam} />
             <Text style={styles.txtContent}>Statistic</Text>
           </View>
           <View style={styles.IconContent}>
-            <TouchableOpacity>
-              <Icon name="login-variant" size={25} color={hitam} />
-            </TouchableOpacity>
+            <Icon name="login-variant" size={25} color={hitam} />
             <Text style={styles.txtContent}>Sign Out</Text>
           </View>
         </View>
         <View style={styles.BottomDrawer}>
-          <View style={styles.IconBottom}>
-            <TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.IconBottom}>
               <Icon name="share-variant-outline" size={25} color={hitam} />
-            </TouchableOpacity>
-            <Text style={styles.txtContent}>Tell a Friend</Text>
-          </View>
-          <View style={styles.IconBottom2}>
-            <TouchableOpacity>
+              <Text style={styles.txtContent}>Tell a Friend</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.IconBottom2}>
               <Icon name="help-circle" size={25} color={hitam} />
-            </TouchableOpacity>
-            <Text style={styles.txtContent}>Help and Feedback</Text>
-          </View>
+              <Text style={styles.txtContent}>Help and Feedback</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
     );

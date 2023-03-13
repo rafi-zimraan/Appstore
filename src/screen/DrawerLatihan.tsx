@@ -1,14 +1,7 @@
-import {
-  Text,
-  StyleSheet,
-  View,
-  DrawerLayoutAndroid,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {Text, StyleSheet, View, DrawerLayoutAndroid} from 'react-native';
 import React, {Component} from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {biru, hitam} from '../utils/Colors';
+import {biru, hitam, putih} from '../utils/Colors';
 import DrawerContainer from '../components/DrawerContainer';
 import DrawerContent from '../components/DrawerContent';
 
@@ -17,19 +10,15 @@ export default class DrawerLatihan extends Component {
   render() {
     const navigationView = (
       <View>
-        <View style={styles.container_navbar}>
-          <View>
-            <Icon
-              onPress={() => this.drawerRef.current?.closeDrawer()}
-              name="close"
-              size={45}
-              color={biru}
-            />
-          </View>
-        </View>
         <DrawerContainer />
         <DrawerContent />
         <View style={styles.Drawertxt4} />
+        <Icon
+          onPress={() => this.drawerRef.current?.closeDrawer()}
+          name="close"
+          size={35}
+          style={{position: 'absolute', right: 3, color: '#FFFFFF'}}
+        />
       </View>
     );
     return (
@@ -55,14 +44,6 @@ export default class DrawerLatihan extends Component {
 }
 
 const styles = StyleSheet.create({
-  container_navbar: {
-    position: 'absolute',
-    backgroundColor: '#c41818',
-    alignItems: 'flex-end',
-    marginHorizontal: 130,
-    left: 165,
-  },
-
   Drawertxt4: {
     width: '100%',
     height: 1,

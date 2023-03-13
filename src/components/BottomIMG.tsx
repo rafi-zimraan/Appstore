@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     width: 30,
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: 10,
-    margin: 30,
+    marginTop: 55,
+    marginHorizontal: 30,
   },
 });
