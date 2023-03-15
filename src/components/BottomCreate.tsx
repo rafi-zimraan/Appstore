@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     marginHorizontal: 45,
-    marginVertical: 290,
+    marginVertical: 315,
     backgroundColor: biruTua,
     borderRadius: 15,
     width: 350,
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   txtBottom: {
     position: 'absolute',
-    marginVertical: 350,
+    marginVertical: 375,
     marginHorizontal: 85,
     justifyContent: 'center',
     alignItems: 'center',
