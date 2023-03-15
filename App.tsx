@@ -21,9 +21,11 @@ const Stack = createNativeStackNavigator();
 //   }
 // }
 
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
+import CreateAccoun from './src/screen/CreateAccoun';
 
 const App = () => {
+  return <CreateAccoun />;
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="LOGIN">

@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
   },
   txtFollo: {
     marginTop: -10,
-    flexDirection: 'column',
     padding: 40,
   },
   txtA: {

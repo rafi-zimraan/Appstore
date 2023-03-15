@@ -1,6 +1,6 @@
 import {StyleSheet, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {putih} from '../utils/Colors';
+import {hitam, putih} from '../utils/Colors';
 
 const ImgContent = () => {
   return (
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   conterIMG: {
     flexDirection: 'row',
     backgroundColor: putih,
-    elevation: 5,
+    elevation: 2,
   },
   IMGVieu: {
     marginHorizontal: 34,
