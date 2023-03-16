@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {hitam} from '../utils/Colors';
+import {biru, hitam, putih} from '../utils/Colors';
 
 const TextBottom = () => {
   return (
@@ -27,12 +27,16 @@ export default TextBottom;
 
 const styles = StyleSheet.create({
   containerTxt: {
+    position: 'absolute',
     flexDirection: 'row',
     fontWeight: 'bold',
   },
   txtFollo: {
-    marginTop: -10,
-    padding: 40,
+    marginTop: 20,
+    padding: 20,
+    paddingHorizontal: 45,
+    backgroundColor: biru,
+    elevation: 2,
   },
   txtA: {
     color: hitam,

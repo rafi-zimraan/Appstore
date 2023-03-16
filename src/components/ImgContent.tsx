@@ -22,7 +22,6 @@ const ImgContent = () => {
             />
           </View>
         </TouchableOpacity>
-
         <TouchableOpacity>
           <View style={styles.IMGVieu}>
             <Image
@@ -31,7 +30,6 @@ const ImgContent = () => {
             />
           </View>
         </TouchableOpacity>
-
         <TouchableOpacity>
           <View style={styles.IMGVieu}>
             <Image
@@ -53,12 +51,12 @@ const styles = StyleSheet.create({
   },
   conterIMG: {
     flexDirection: 'row',
-    backgroundColor: putih,
-    elevation: 2,
+    // backgroundColor: putih,
+    // elevation: 2,
+    marginVertical: 150,
   },
   IMGVieu: {
     marginHorizontal: 34,
-    paddingVertical: 10,
   },
   contentIMG: {
     alignContent: 'center',

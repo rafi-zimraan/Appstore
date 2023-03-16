@@ -4,7 +4,7 @@ import ContainerProfile from '../components/ContainerProfile';
 import TextNavbar from '../components/TextNavbar';
 import HighLight from '../components/HighLight';
 import TextBottom from '../components/TextBottom';
-import {putih} from '../utils/Colors';
+import {hitam, putih} from '../utils/Colors';
 import ImgContent from '../components/ImgContent';
 import BottomIMG from '../components/BottomIMG';
 
@@ -20,8 +20,8 @@ const Profile = () => {
       <TextNavbar />
       <HighLight />
       <TextBottom />
-      <View style={styles.ContainerGaris}></View>
       <ImgContent />
+      <View style={styles.ContainerGaris}></View>
       <BottomIMG />
     </View>
   );
@@ -51,10 +51,8 @@ const styles = StyleSheet.create({
     color: putih,
   },
   ContainerGaris: {
-    height: 1,
-    paddingTop: 1,
-    margin: -20,
-    elevation: 5,
-    backgroundColor: putih,
+    // height: 1,
+    // elevation: 5,
+    // backgroundColor: hitam,
   },
 });

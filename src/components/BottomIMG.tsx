@@ -1,6 +1,7 @@
 import {StyleSheet, View, Image} from 'react-native';
 import React from 'react';
 import {putih} from '../utils/Colors';
+import {TouchableOpacity} from 'react-native/Libraries/Components/Touchable/TouchableOpacity';
 
 const BottomIMG = () => {
   return (
@@ -43,18 +44,18 @@ export default BottomIMG;
 
 const styles = StyleSheet.create({
   Bottom: {
+    position: 'absolute',
     flexDirection: 'row',
-    marginTop: 55,
-    elevation: 10,
-    backgroundColor: putih,
+    marginVertical: 625,
   },
-  BottomA: {},
+  BottomA: {
+    padding: 5,
+  },
   BottomImg: {
     height: 30,
     width: 30,
-    flexDirection: 'column',
     justifyContent: 'center',
-    marginTop: 55,
-    marginHorizontal: 30,
+    marginVertical: 50,
+    marginHorizontal: 25,
   },
 });

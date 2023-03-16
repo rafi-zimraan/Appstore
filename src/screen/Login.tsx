@@ -1,7 +1,8 @@
 import {Text, StyleSheet, View, Image, TouchableOpacity} from 'react-native';
 import React, {Component} from 'react';
-import {biruTua, hitam, putih} from '../utils/Colors';
+import {biru, biruTua, hitam, putih} from '../utils/Colors';
 import BottomLogReg from '../components/BottomLogReg';
+import CreateAccoun from '../screen/CreateAccoun';
 import InputText from '../components/InputText';
 import Bottom from '../components/Bottom';
 
@@ -27,7 +28,14 @@ export default class Login extends Component<Props> {
           </View>
         </TouchableOpacity>
         {/* <BottomLogReg /> */}
-        <Bottom />
+        <View style={styles.account}>
+          <Text>Don't have an account?</Text>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('CreateAccoun')}>
+            <Text style={styles.bottomAccount}>Create accoun</Text>
+          </TouchableOpacity>
+        </View>
+        {/* <Bottom /> */}
       </View>
     );
   }
@@ -55,7 +63,7 @@ const styles = StyleSheet.create({
     color: hitam,
   },
   bottom: {
-    marginTop: 180,
+    marginTop: 140,
     borderRadius: 30,
     backgroundColor: biruTua,
     width: 350,
@@ -67,5 +75,12 @@ const styles = StyleSheet.create({
     color: putih,
     fontSize: 25,
     fontWeight: '800',
+  },
+  account: {
+    flexDirection: 'row',
+    marginTop: 10,
+  },
+  bottomAccount: {
+    color: biru,
   },
 });

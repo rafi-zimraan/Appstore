@@ -6,6 +6,7 @@ import Drawer from './src/screen/Drawer';
 import DrawerLatihan from './src/screen/DrawerLatihan';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import CreateAccoun from './src/screen/CreateAccoun';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,14 +22,12 @@ const Stack = createNativeStackNavigator();
 //   }
 // }
 
-import {StyleSheet, Text} from 'react-native';
-import CreateAccoun from './src/screen/CreateAccoun';
-
 const App = () => {
-  return <CreateAccoun />;
+  // return <CreateAccoun />;
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="LOGIN">
+        <Stack.Screen name="CreateAccoun" component={CreateAccoun} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen
           name="LOGIN"
@@ -41,5 +40,3 @@ const App = () => {
 };
 
 export default App;
-
-const styles = StyleSheet.create({});

@@ -45,7 +45,7 @@ export default TextNavbar;
 
 const styles = StyleSheet.create({
   content: {
-    marginTop: 50,
+    marginTop: 10,
     left: 15,
     flexDirection: 'row',
   },
