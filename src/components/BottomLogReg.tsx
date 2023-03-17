@@ -1,27 +1,27 @@
+import React from 'react';
 import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
-import React, {Component} from 'react';
 import {biruTua, putih} from '../utils/Colors';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useNavigation} from '@react-navigation/native';
+import {RootStackParams} from '../Router';
 
-// interface props {
-//   title: string;
-// }
-type Props = {
-  navigation: any;
+const BottomLogReg = () => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  return (
+    <TouchableOpacity>
+      <View style={styles.bottom}>
+        <Text
+          style={styles.txtBottom}
+          onPress={() => navigation.navigate('createAccoun')}>
+          Sign In
+        </Text>
+      </View>
+    </TouchableOpacity>
+  );
 };
 
-export default class BottomLogReg extends Component<Props> {
-  render() {
-    // const {title} = this.props;
-    return (
-      <TouchableOpacity
-        onPress={() => this.props.navigation.navigate('Profile')}>
-        <View style={styles.bottom}>
-          <Text style={styles.txtBottom}>Sign In</Text>
-        </View>
-      </TouchableOpacity>
-    );
-  }
-}
+export default BottomLogReg;
 
 const styles = StyleSheet.create({
   bottom: {

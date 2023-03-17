@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   txtFollo: {
-    marginTop: 20,
+    marginTop: 10,
     padding: 20,
     paddingHorizontal: 45,
-    backgroundColor: biru,
-    elevation: 2,
+    backgroundColor: putih,
+    elevation: 10,
   },
   txtA: {
     color: hitam,

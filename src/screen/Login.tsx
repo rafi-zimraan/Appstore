@@ -1,47 +1,58 @@
-import {Text, StyleSheet, View, Image, TouchableOpacity} from 'react-native';
-import React, {Component} from 'react';
+import React from 'react';
+import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParams} from '../Router';
 import {biru, biruTua, hitam, putih} from '../utils/Colors';
-import BottomLogReg from '../components/BottomLogReg';
-import CreateAccoun from '../screen/CreateAccoun';
 import InputText from '../components/InputText';
-import Bottom from '../components/Bottom';
 
-type Props = {
-  navigation: any;
+const Login = () => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParams>>();
+
+  // setTimeout(() => {
+  //   navigation.replace('profile');
+  // }, 3000);
+
+  return (
+    <View style={styles.container}>
+      <Image
+        style={styles.logo}
+        source={require('../assets/image/iphone.png')}
+      />
+      <Text style={styles.counterText}>LOGIN</Text>
+      <Text style={styles.counterText2}>Sign Up For Free</Text>
+      <InputText />
+      <TouchableOpacity>
+        <View style={styles.bottom}>
+          <Text
+            onPress={() => navigation.navigate('profile')}
+            style={styles.txtBottom}>
+            Sign In
+          </Text>
+        </View>
+      </TouchableOpacity>
+      {/* <BottomLogReg /> */}
+      <View style={styles.account}>
+        <Text>Don't have an account?</Text>
+        <TouchableOpacity>
+          <Text style={styles.bottomAccount}>Create accoun</Text>
+        </TouchableOpacity>
+      </View>
+      {/* <Bottom /> */}
+    </View>
+  );
 };
 
-export default class Login extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image
-          style={styles.logo}
-          source={require('../assets/image/iphone.png')}
-        />
-        <Text style={styles.counterText}>LOGIN</Text>
-        <Text style={styles.counterText2}>Sign Up For Free</Text>
-        <InputText />
-        <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('Profile')}>
-          <View style={styles.bottom}>
-            <Text style={styles.txtBottom}>Sign In</Text>
-          </View>
-        </TouchableOpacity>
-        {/* <BottomLogReg /> */}
-        <View style={styles.account}>
-          <Text>Don't have an account?</Text>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('CreateAccoun')}>
-            <Text style={styles.bottomAccount}>Create accoun</Text>
-          </TouchableOpacity>
-        </View>
-        {/* <Bottom /> */}
-      </View>
-    );
-  }
-}
+export default Login;
 
 const styles = StyleSheet.create({
+  Container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: putih,
+  },
   container: {
     flex: 1,
     backgroundColor: putih,

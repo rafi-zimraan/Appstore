@@ -51,9 +51,10 @@ const styles = StyleSheet.create({
   },
   conterIMG: {
     flexDirection: 'row',
-    // backgroundColor: putih,
-    // elevation: 2,
-    marginVertical: 150,
+    marginVertical: 90,
+    elevation: 5,
+    backgroundColor: putih,
+    padding: 9,
   },
   IMGVieu: {
     marginHorizontal: 34,
