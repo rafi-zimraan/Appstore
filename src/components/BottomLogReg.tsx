@@ -6,16 +6,10 @@ import {useNavigation} from '@react-navigation/native';
 import {RootStackParams} from '../Router';
 
 const BottomLogReg = () => {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParams>>();
   return (
     <TouchableOpacity>
       <View style={styles.bottom}>
-        <Text
-          style={styles.txtBottom}
-          onPress={() => navigation.navigate('createAccoun')}>
-          Sign In
-        </Text>
+        <Text style={styles.txtBottom}>Sign In</Text>
       </View>
     </TouchableOpacity>
   );

@@ -9,11 +9,6 @@ import InputText from '../components/InputText';
 const Login = () => {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParams>>();
-
-  // setTimeout(() => {
-  //   navigation.replace('profile');
-  // }, 3000);
-
   return (
     <View style={styles.container}>
       <Image
@@ -23,19 +18,15 @@ const Login = () => {
       <Text style={styles.counterText}>LOGIN</Text>
       <Text style={styles.counterText2}>Sign Up For Free</Text>
       <InputText />
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('profile')}>
         <View style={styles.bottom}>
-          <Text
-            onPress={() => navigation.navigate('profile')}
-            style={styles.txtBottom}>
-            Sign In
-          </Text>
+          <Text style={styles.txtBottom}>Sign In</Text>
         </View>
       </TouchableOpacity>
       {/* <BottomLogReg /> */}
       <View style={styles.account}>
         <Text>Don't have an account?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('createAccoun')}>
           <Text style={styles.bottomAccount}>Create accoun</Text>
         </TouchableOpacity>
       </View>

@@ -1,8 +1,8 @@
 import React from 'react';
-import Splash from './screen/Splash';
-import Drawer from './screen/Drawer';
-import DrawerLatihan from './screen/DrawerLatihan';
 import Router from './Router';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return <Router />;
