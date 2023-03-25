@@ -24,55 +24,22 @@ const Crud = () => {
   };
 
   return (
-    <View style={{flex: 1, justifyContent: 'flex-end'}}>
+    <View style={styles.Container}>
       {data.map((value, index) => (
-        <View
-          key={index}
-          style={{
-            marginVertical: 2,
-            bottom: 570,
-            margin: 20,
-          }}>
+        <View key={index} style={styles.ContentTxt}>
           <Text>{value.item}</Text>
         </View>
       ))}
-      <View style={{padding: 10, flexDirection: 'row'}}>
-        <View
-          style={{
-            position: 'absolute',
-            bottom: 700,
-            marginHorizontal: 170,
-          }}>
-          <Text style={{fontSize: 16, color: 'black', fontWeight: '700'}}>
-            Hasil Input Data
-          </Text>
+      <View style={styles.Content}>
+        <View style={styles.Content1}>
+          <Text style={styles.Content2}>Hasil Input Data</Text>
         </View>
         <TextInput
-          style={{
-            position: 'absolute',
-            borderWidth: 1,
-            borderRadius: 6,
-            bottom: 2,
-            padding: 10,
-            width: '80%',
-            left: 12,
-          }}
+          style={styles.Content3}
           placeholder={'Masukkan data'}
           onChangeText={t => setText(t)}
         />
-        <TouchableOpacity
-          style={{
-            position: 'absolute',
-            justifyContent: 'center',
-            backgroundColor: 'blue',
-            alignItems: 'center',
-            paddingVertical: 10,
-            marginLeft: 357,
-            borderRadius: 6,
-            width: '15%',
-            bottom: 8,
-          }}
-          onPress={() => create(text)}>
+        <TouchableOpacity style={styles.Content4} onPress={() => create(text)}>
           <Text style={{color: 'white'}}>Tambah</Text>
         </TouchableOpacity>
       </View>
@@ -82,4 +49,48 @@ const Crud = () => {
 
 export default Crud;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  Container: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  },
+  ContentTxt: {
+    marginVertical: 2,
+    bottom: 570,
+    margin: 20,
+  },
+  Content: {
+    padding: 10,
+    flexDirection: 'row',
+  },
+  Content1: {
+    position: 'absolute',
+    bottom: 700,
+    marginHorizontal: 170,
+  },
+  Content2: {
+    fontSize: 16,
+    color: 'black',
+    fontWeight: '700',
+  },
+  Content3: {
+    position: 'absolute',
+    borderWidth: 1,
+    borderRadius: 6,
+    bottom: 2,
+    padding: 10,
+    width: '80%',
+    left: 12,
+  },
+  Content4: {
+    position: 'absolute',
+    justifyContent: 'center',
+    backgroundColor: 'blue',
+    alignItems: 'center',
+    paddingVertical: 10,
+    marginLeft: 357,
+    borderRadius: 6,
+    width: '15%',
+    bottom: 8,
+  },
+});
