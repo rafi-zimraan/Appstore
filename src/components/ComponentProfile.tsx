@@ -1,5 +1,5 @@
 import {Image, ImageProps, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+// import React from 'react';
 import {hitam} from '../utils/Colors';
 
 interface Props extends ImageProps {

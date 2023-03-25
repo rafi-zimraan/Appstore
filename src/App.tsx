@@ -1,11 +1,9 @@
 import React from 'react';
 import Router from './Router';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-const Stack = createNativeStackNavigator();
+import Crud from './screen/Crud';
 
 const App = () => {
-  return <Router />;
+  return <Crud />;
 };
 
 export default App;
