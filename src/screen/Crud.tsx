@@ -5,7 +5,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {putih} from '../utils/Colors';
 
 interface Item {
   item: string;
@@ -15,12 +17,40 @@ const Crud = () => {
   const [text, setText] = useState<string>('');
   const [data, setData] = useState<Item[]>([]);
 
+  useEffect(() => {
+    getData();
+  }, []);
+
   const create = (text: string) => {
     setData(prevData => {
       const newData = [...prevData, {item: text}];
       console.log(newData);
+      saveData(newData);
       return newData;
     });
+  };
+
+  // UNTUK MENYIMPAN DATA
+  const saveData = async (value: Array<{item: string}>) => {
+    try {
+      await AsyncStorage.setItem('database', JSON.stringify(value));
+    } catch (e) {
+      console.log('save data eror', e);
+    }
+  };
+
+  // UNTUK MEMUNCULKAN DATA AGAR PERMANENST
+  const getData = async () => {
+    try {
+      let value = await AsyncStorage.getItem('database');
+      if (value !== null) {
+        const parseValue = JSON.parse(value);
+        console.log(parseValue);
+        setData(parseValue);
+      }
+    } catch (error) {
+      console.log('save data eror', error);
+    }
   };
 
   return (
@@ -53,6 +83,7 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     justifyContent: 'flex-end',
+    backgroundColor: putih,
   },
   ContentTxt: {
     marginVertical: 2,
@@ -74,7 +105,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   Content3: {
-    position: 'absolute',
     borderWidth: 1,
     borderRadius: 6,
     bottom: 2,
@@ -83,14 +113,16 @@ const styles = StyleSheet.create({
     left: 12,
   },
   Content4: {
-    position: 'absolute',
     justifyContent: 'center',
     backgroundColor: 'blue',
     alignItems: 'center',
     paddingVertical: 10,
-    marginLeft: 357,
     borderRadius: 6,
     width: '15%',
-    bottom: 8,
+    left: 18,
+    bottom: 2,
   },
 });
+function getData() {
+  throw new Error('Function not implemented.');
+}
