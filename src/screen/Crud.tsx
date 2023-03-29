@@ -1,4 +1,5 @@
 import {
+  Button,
   StyleSheet,
   Text,
   TextInput,
@@ -7,7 +8,7 @@ import {
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {putih} from '../utils/Colors';
+import {hitam, putih} from '../utils/Colors';
 
 interface Item {
   item: string;
@@ -16,6 +17,8 @@ interface Item {
 const Crud = () => {
   const [text, setText] = useState<string>('');
   const [data, setData] = useState<Item[]>([]);
+  const [index, setIndex] = useState<number>(0);
+  const [editMode, setEditMode] = useState<boolean>(false);
 
   useEffect(() => {
     getData();
@@ -53,12 +56,50 @@ const Crud = () => {
     }
   };
 
+  const editData = () => {
+    const newData2 = [...data];
+    newData2[index].item = text;
+
+    setData(newData2);
+    setText('');
+    setEditMode(false);
+
+    saveData(newData2);
+  };
+
+  const deleteData = () => {
+    const newData3 = [...data];
+    newData3.splice(index, 1);
+
+    setData(newData3);
+    setEditMode(false);
+    saveData(newData3);
+  };
+
   return (
     <View style={styles.Container}>
       {data.map((value, index) => (
-        <View key={index} style={styles.ContentTxt}>
-          <Text>{value.item}</Text>
-        </View>
+        <TouchableOpacity
+          onPress={() => {
+            setText(value.item);
+            setIndex(index);
+            setEditMode(true);
+          }}
+          key={index}>
+          <View style={styles.ContentTxt}>
+            <Text style={styles.txt}>
+              {index}. {value.item}
+            </Text>
+
+            <Button
+              onPress={() => {
+                setIndex(index);
+                deleteData();
+              }}
+              title="x"
+            />
+          </View>
+        </TouchableOpacity>
       ))}
       <View style={styles.Content}>
         <View style={styles.Content1}>
@@ -69,9 +110,19 @@ const Crud = () => {
           placeholder={'Masukkan data'}
           onChangeText={t => setText(t)}
         />
-        <TouchableOpacity style={styles.Content4} onPress={() => create(text)}>
-          <Text style={{color: 'white'}}>Tambah</Text>
-        </TouchableOpacity>
+        {editMode ? (
+          <TouchableOpacity
+            style={styles.Content4}
+            onPress={() => (editMode ? editData() : create(text))}>
+            <Text style={styles.txtContent}>edit</Text>
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity
+            style={styles.Content4}
+            onPress={() => (editMode ? editData() : create(text))}>
+            <Text style={styles.txtContent}>Tambah</Text>
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );
@@ -88,6 +139,10 @@ const styles = StyleSheet.create({
   ContentTxt: {
     bottom: 370,
     left: 10,
+  },
+  txt: {
+    color: hitam,
+    fontSize: 17,
   },
   Content: {
     padding: 10,
@@ -121,7 +176,7 @@ const styles = StyleSheet.create({
     left: 18,
     bottom: 2,
   },
+  txtContent: {
+    color: putih,
+  },
 });
-function getData() {
-  throw new Error('Function not implemented.');
-}
