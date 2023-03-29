@@ -86,9 +86,8 @@ const styles = StyleSheet.create({
     backgroundColor: putih,
   },
   ContentTxt: {
-    marginVertical: 2,
-    bottom: 570,
-    margin: 20,
+    bottom: 370,
+    left: 10,
   },
   Content: {
     padding: 10,
