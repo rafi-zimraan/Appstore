@@ -1,3 +1,4 @@
+// CRUD OFFLINE
 import {
   Button,
   StyleSheet,
@@ -19,10 +20,6 @@ const Crud = () => {
   const [data, setData] = useState<Item[]>([]);
   const [index, setIndex] = useState<number>(0);
   const [editMode, setEditMode] = useState<boolean>(false);
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   const create = (text: string) => {
     setData(prevData => {
@@ -55,6 +52,10 @@ const Crud = () => {
       console.log('save data eror', error);
     }
   };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const editData = () => {
     const newData2 = [...data];
