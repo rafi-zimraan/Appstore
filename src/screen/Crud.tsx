@@ -91,7 +91,6 @@ const Crud = () => {
             <Text style={styles.txt}>
               {index}. {value.item}
             </Text>
-
             <Button
               onPress={() => {
                 setIndex(index);
