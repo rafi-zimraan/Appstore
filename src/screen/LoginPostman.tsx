@@ -11,21 +11,21 @@ import {
 import React, {useState} from 'react';
 import {biruTua, hitam, putih} from '../utils/Colors';
 import {ActivityIndicator} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParams} from '../Router';
 
 const Postman = () => {
-  const [name, setName] = useState<string>('');
+  //   const navigation =
+  //     useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [password_Confirmation, setPassword_Confirmation] =
-    useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const Reg = () => {
     setLoading(true);
     var formdata = new FormData();
-    formdata.append('name', name);
     formdata.append('email', email);
     formdata.append('password', password);
-    formdata.append('password_confirmation', password_Confirmation);
 
     var requestOptions = {
       method: 'POST',
@@ -33,10 +33,7 @@ const Postman = () => {
       redirect: 'follow',
     };
 
-    fetch(
-      'https://frontendreq.pondokprogrammer.com/api/register',
-      requestOptions,
-    )
+    fetch('https://frontendreq.pondokprogrammer.com/api/login', requestOptions)
       .then(response => response.json())
       .then(result => console.log(result))
       .catch(error => console.log('error', error))
@@ -50,15 +47,7 @@ const Postman = () => {
         translucent
       />
       <View style={styles.Container}>
-        <Text style={styles.txtNavbar}>Register</Text>
-      </View>
-      <View style={styles.conterInput}>
-        <Text style={styles.name}>Name</Text>
-        <TextInput
-          placeholder="name"
-          style={styles.input}
-          onChangeText={(nm: string) => setName(nm)}
-        />
+        <Text style={styles.txtNavbar}>Login</Text>
       </View>
       <View style={styles.conterInput}>
         <Text style={styles.name}>Email</Text>
@@ -77,20 +66,11 @@ const Postman = () => {
           onChangeText={(nm: string) => setPassword(nm)}
         />
       </View>
-      <View style={styles.conterInput}>
-        <Text style={styles.name}>Password-confirmation</Text>
-        <TextInput
-          placeholder="password"
-          secureTextEntry={true}
-          style={styles.input}
-          onChangeText={(nm: string) => setPassword_Confirmation(nm)}
-        />
-      </View>
       <TouchableOpacity onPress={() => Reg()} style={styles.Button}>
         {loading ? (
           <ActivityIndicator size="small" color="white" />
         ) : (
-          <Text style={styles.ButtonTxt}>Register</Text>
+          <Text style={styles.ButtonTxt}>Sign Up</Text>
         )}
       </TouchableOpacity>
     </View>
