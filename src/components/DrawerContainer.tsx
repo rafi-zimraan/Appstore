@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
     marginVertical: 45,
   },
   imgDrawer: {
-    // position: 'absolute',
     width: 100,
     height: 100,
     borderRadius: 50,

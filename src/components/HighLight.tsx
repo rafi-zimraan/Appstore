@@ -46,11 +46,11 @@ const HighLight = () => {
 export default HighLight;
 
 const styles = StyleSheet.create({
-  tema: {
-    flexDirection: 'row-reverse',
-  },
   tema1: {
     flexDirection: 'row',
     marginTop: 35,
+  },
+  tema: {
+    flexDirection: 'row-reverse',
   },
 });

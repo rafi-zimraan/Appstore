@@ -22,7 +22,7 @@ export default class Drawer extends Component {
       <DrawerLayoutAndroid
         ref={this.drawerCut}
         drawerWidth={300}
-        drawerPosition={'left'}
+        drawerPosition={'right'}
         renderNavigationView={() => navigationView}>
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
           <Text

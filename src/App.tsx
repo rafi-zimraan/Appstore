@@ -4,7 +4,7 @@ import Drawer from './screen/Drawer';
 import DrawerLatihan from './screen/DrawerLatihan';
 
 const App = () => {
-  return <Router />;
+  return <DrawerLatihan />;
 };
 
 export default App;

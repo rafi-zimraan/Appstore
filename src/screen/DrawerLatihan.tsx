@@ -1,7 +1,7 @@
 import {Text, StyleSheet, View, DrawerLayoutAndroid} from 'react-native';
 import React, {Component} from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {biru, hitam, putih} from '../utils/Colors';
+import {hitam} from '../utils/Colors';
 import DrawerContainer from '../components/DrawerContainer';
 import DrawerContent from '../components/DrawerContent';
 
